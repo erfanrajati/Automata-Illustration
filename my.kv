@@ -1,0 +1,115 @@
+#:kivy 2.3.0
+
+<WindowManager>:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+        
+        padding: 50
+        spacing: 20
+
+        Button:
+            text: 'Show Automaton Illustration Screen'
+            font_size: 24
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = "left"
+
+        Label:
+            text: 'Expression Analysis'
+            font_size: 42
+            size_hint_y: .7
+        
+        GridLayout:
+            cols: 2
+            size_hint_y: 1.5
+            Label:
+                text: 'Expression'
+                font_size: 28
+            TextInput:
+                id: expression_input
+                multiline: False
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .5)
+
+            Button:
+                text: 'Submit'
+                font_size: 28
+                size_hint: (1, 1)
+                on_release:
+                    root.submit(self)
+
+            Button:
+                text: 'Prewritten Samples'
+                font_size: 28
+                size_hint: (1, 1)
+                on_release:
+                    root.samples(self)
+
+
+
+
+
+<SecondWindow>:
+    name: "second"
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+        
+        padding: 50
+        spacing: 20
+
+        Button:
+            text: 'Show Expression Analysis Screen'
+            font_size: 24
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+        
+        Label:
+            text: 'Automata Illustration'
+            font_size: 42
+            size_hint_y: .7
+        
+        GridLayout:
+            cols: 2
+            size_hint_y: 1.5
+            Label:
+                text: 'Automaton Nodes'
+                font_size: 28
+            TextInput:
+                multiline: False
+            Label:
+                text: 'Automaton Edges'
+                font_size: 28
+            TextInput:
+                multiline: True
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: (1, .5)
+
+            Button:
+                text: 'Submit'
+                font_size: 28
+                size_hint: (1, 1)
+                on_release:
+                    root.submit(self)
+
+            Button:
+                text: 'Prewritten Samples'
+                font_size: 28
+                size_hint: (1, 1)
+                on_release:
+                    root.samples(self)
