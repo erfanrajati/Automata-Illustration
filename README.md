@@ -3,7 +3,7 @@ Theory of Computation, a significant subject in Computer Science. Here you can f
 
 
 ways to ocontribute:
-NOTE: if you want to contribute, add another branch with your name on it. 
+
 I'm looking to expand my project in these ways:
 1. enhancing user experience
 2. implementing better visualization for automata using matplotlib
