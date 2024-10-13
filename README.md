@@ -17,7 +17,8 @@ This project provides visual illustrations of key algorithms and concepts in the
     ```
 2. Install the required dependencies:
     ```bash
-    pip install -r requirements.txt
+    pip install kivy
+    conda install kivy
     ```
 
 ## Usage
@@ -31,6 +32,3 @@ python MyApp.py
 
 Contributions are welcome! Please feel free to submit issues or pull requests to enhance the project.
 
-## License
-
-This project is licensed under the MIT License.
